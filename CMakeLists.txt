@@ -6,10 +6,9 @@
 ## License text is included with the source distribution.
 ##****************************************************************************
 cmake_minimum_required(VERSION 3.13)
-project(Ystring VERSION 1.0.0)
+project(Ystring VERSION 1.0.1)
 
-
-# Set YSTRING_MASTER_PROJECT to ON if Argos is the root level project.
+# Set YSTRING_MASTER_PROJECT to ON if Ystring is the root level project.
 if (NOT DEFINED YSTRING_MASTER_PROJECT)
     if (CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
         set(YSTRING_MASTER_PROJECT ON)
@@ -186,6 +185,7 @@ target_compile_definitions(Ystring
     PRIVATE
         $<$<CXX_COMPILER_ID:MSVC>:_SCL_SECURE_NO_WARNINGS>
         $<$<CXX_COMPILER_ID:MSVC>:YSTRING_EXPORTS>
+        $<$<PLATFORM_ID:MSYS>:YSTRING_EXPORTS>
     )
 
 target_include_directories(Ystring BEFORE

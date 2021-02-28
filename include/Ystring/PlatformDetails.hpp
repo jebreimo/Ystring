@@ -16,9 +16,10 @@
 
 /// @cond
 
-#ifdef _MSC_VER
+#ifdef _WIN32
+    static_assert(sizeof(wchar_t) == 2, "Size of wchar_t isn't 2 bytes.");
     #define YSTRING_WCHAR_IS_2_BYTES
-    #if _MSC_VER >= 1900
+    #if !defined(_MSC_VER) || _MSC_VER >= 1900
         static_assert(!std::is_same<wchar_t, char16_t>::value,
                       "wchar_t and char16_t can't be the same type.");
         #define YSTRING_CPP11_CHAR_TYPES_SUPPORTED
