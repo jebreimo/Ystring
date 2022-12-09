@@ -6,7 +6,7 @@
 ## License text is included with the source distribution.
 ##****************************************************************************
 cmake_minimum_required(VERSION 3.13)
-project(Ystring VERSION 1.0.1)
+project(Ystring VERSION 1.0.2)
 
 # Set YSTRING_MASTER_PROJECT to ON if Ystring is the root level project.
 if (NOT DEFINED YSTRING_MASTER_PROJECT)

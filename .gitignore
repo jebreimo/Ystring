@@ -1,3 +1,7 @@
+*.obj
+*.obj.d
+*.suo
+.vs
 bin
 .idea
 *.pyc
@@ -5,3 +9,4 @@ scripts/*.hpp
 scripts/*.cpp
 scripts/*.txt
 build*
+cmake-build*/
