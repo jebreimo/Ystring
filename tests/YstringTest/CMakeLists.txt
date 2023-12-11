@@ -5,24 +5,22 @@
 ## This file is distributed under the Simplified BSD License.
 ## License text is included with the source distribution.
 ##****************************************************************************
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.13)
 
 project(YstringTest)
 
-find_package(Ytest QUIET)
-
-if (NOT TARGET Ytest::Ytest)
-    message("Ytest not found. Unit tests will not be built or run.")
-    return()
-endif ()
+include(FetchContent)
+FetchContent_Declare(ytest
+    GIT_REPOSITORY "https://github.com/jebreimo/Ytest.git"
+    GIT_TAG v0.1.6)
+FetchContent_MakeAvailable(ytest)
 
 if(MSVC)
     set(SOURCE_FILES_PLATFORM_SPECIFIC
         Utf/test_Utf16WString.cpp)
 else()
     set(SOURCE_FILES_PLATFORM_SPECIFIC
-        Utf/test_Utf16String.cpp
-        )
+        Utf/test_Utf16String.cpp)
 endif()
 
 add_executable(YstringTest
