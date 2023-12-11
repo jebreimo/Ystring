@@ -58,7 +58,8 @@ namespace Ystring { namespace Generic
 
         StringReference(T* str, size_t size, size_t capacity)
             : m_String(str),
-              m_Size(size)
+              m_Size(size),
+              m_Capacity(capacity)
         {}
 
         EncodedString::Appender<T*> getAppender()
