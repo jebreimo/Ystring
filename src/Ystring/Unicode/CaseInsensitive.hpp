@@ -30,7 +30,6 @@ namespace Ystring { namespace Unicode
     }
 
     struct CaseInsensitiveCompare
-        : std::binary_function<char32_t, char32_t, int32_t>
     {
         int32_t operator()(char32_t a, char32_t b) const
         {
@@ -39,7 +38,6 @@ namespace Ystring { namespace Unicode
     };
 
     struct CaseInsensitiveEqual
-        : std::binary_function<char32_t, char32_t, bool>
     {
         bool operator()(char32_t a, char32_t b) const
         {
@@ -48,7 +46,6 @@ namespace Ystring { namespace Unicode
     };
 
     struct CaseInsensitiveLess
-        : std::binary_function<char32_t, char32_t, bool>
     {
         bool operator()(char32_t a, char32_t b) const
         {
