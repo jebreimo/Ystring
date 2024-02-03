@@ -6,7 +6,7 @@
 ## License text is included with the source distribution.
 ##****************************************************************************
 cmake_minimum_required(VERSION 3.13)
-project(Ystring VERSION 1.0.3)
+project(Ystring VERSION 1.0.4)
 
 # Set YSTRING_MASTER_PROJECT to ON if Ystring is the root level project.
 if (NOT DEFINED YSTRING_MASTER_PROJECT)
@@ -210,10 +210,6 @@ export(TARGETS Ystring
     )
 
 if (YSTRING_BUILD_TEST)
-    if (EXISTS "${CMAKE_SOURCE_DIR}/external/Ytest/CMakeLists.txt")
-        add_subdirectory(external/Ytest EXCLUDE_FROM_ALL)
-    endif ()
-
     enable_testing()
 
     add_subdirectory(tests/YstringTest)

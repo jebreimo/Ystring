@@ -106,7 +106,7 @@ namespace Ystring { namespace Generic
     template <typename T>
     Range<T*> makeRange(T* s)
     {
-        return makeRange(s, s + std::char_traits<T>::length(s));
+        return makeRange(s, s + std::char_traits<std::remove_cv_t<T>>::length(s));
     }
 
     template <typename Iterator>
