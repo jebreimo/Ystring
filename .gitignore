@@ -10,3 +10,4 @@ scripts/*.cpp
 scripts/*.txt
 build*
 cmake-build*/
+docs/
