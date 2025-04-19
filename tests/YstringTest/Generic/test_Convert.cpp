@@ -24,6 +24,11 @@ using Ystring::Generic::convert;
 using Ystring::Generic::makeRange;
 using Ystring::Generic::makeArrayRange;
 
+inline std::ostream& operator<<(std::ostream& os, char32_t str)
+{
+    return os << uint32_t(str);
+}
+
 void test_Utf8_to_Utf32BE_as_char()
 {
     char str[] = "A\xF0\x9F\x80\x80";

@@ -23,7 +23,7 @@ option(YSTRING_BUILD_TEST "Build tests" ${YSTRING_MASTER_PROJECT})
 # Install option
 option(YSTRING_INSTALL "Generate the install target" ${YSTRING_MASTER_PROJECT})
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
 
 include(GNUInstallDirs)
 

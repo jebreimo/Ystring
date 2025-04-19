@@ -12,7 +12,7 @@ project(YstringTest)
 include(FetchContent)
 FetchContent_Declare(ytest
     GIT_REPOSITORY "https://github.com/jebreimo/Ytest.git"
-    GIT_TAG v0.1.6)
+    GIT_TAG v0.2.4)
 FetchContent_MakeAvailable(ytest)
 
 if(MSVC)
@@ -20,7 +20,8 @@ if(MSVC)
         Utf/test_Utf16WString.cpp)
 else()
     set(SOURCE_FILES_PLATFORM_SPECIFIC
-        Utf/test_Utf16String.cpp)
+        Utf/test_Utf16String.cpp
+    )
 endif()
 
 add_executable(YstringTest

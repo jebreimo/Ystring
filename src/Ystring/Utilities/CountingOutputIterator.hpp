@@ -12,11 +12,16 @@
 namespace Ystring { namespace Utilities
 {
     template <typename Value>
-    class CountingOutputIterator : public std::iterator<
-            std::output_iterator_tag,
-            Value>
+    class CountingOutputIterator
     {
     public:
+        // iterator types
+        using iterator_category = std::output_iterator_tag;
+        using value_type = void;
+        using difference_type = void;
+        using pointer = void;
+        using reference = void;
+
         explicit CountingOutputIterator(size_t* count)
             : m_Count(count)
         {}

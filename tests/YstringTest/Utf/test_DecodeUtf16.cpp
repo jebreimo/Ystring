@@ -15,6 +15,11 @@ namespace
     using namespace Ystring;
     using namespace Ystring::Encodings;
 
+    inline std::ostream& operator<<(std::ostream& os, char32_t str)
+    {
+        return os << uint32_t(str);
+    }
+
     inline void testNextUtf16LEChar(const char*& it, const char* end,
                                     char32_t expected)
     {

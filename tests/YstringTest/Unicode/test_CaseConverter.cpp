@@ -10,11 +10,17 @@
 
 #include "Ytest/Ytest.hpp"
 
-namespace {
-
+namespace
+{
     using namespace Ystring::Unicode;
 
-    static void test_upperCase() {
+    std::ostream& operator<<(std::ostream& os, char32_t str)
+    {
+        return os << uint32_t(str);
+    }
+
+    static void test_upperCase()
+    {
         Y_EQUAL(upper('A'), 'A');
         Y_EQUAL(upper('a'), 'A');
         Y_EQUAL(upper('Z'), 'Z');
